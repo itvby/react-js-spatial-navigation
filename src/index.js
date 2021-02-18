@@ -218,6 +218,7 @@ class Focusable extends Component {
   }
 
   componentWillUnmount() {
+    this.el.removeEventListener('sn:willfocus', this._componentFocused);
     this.el.removeEventListener('sn:focused', this._componentFocused);
     this.el.removeEventListener('sn:unfocused', this._componentUnfocused);
     this.el.removeEventListener('sn:enter-up', this._componentClickEnter);
